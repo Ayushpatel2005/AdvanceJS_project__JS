@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<body>
+    <input type="text" id="one"><br><br>
+    <button onclick="Clear()">C</button>
+    <button onclick="add(1)">1</button> 
+    <button onclick="add(2)">2</button> <br><br>
+
+    <button onclick="add(3)">3</button>
+     <button onclick="add(4)">4</button>
+    <button onclick="add(5)">5</button><br><br>
+
+    <button onclick="add(6)">6</button>
+    <button onclick="add(7)">7</button>
+    <button onclick="add(8)">8</button><br><br>
+
+    <button onclick="add(9)">9</button>
+    <button onclick="add(0)">0</button><br><br>
+
+    <button onclick="add('+')">+</button>
+    <button onclick="add('-')">-</button>
+    <button onclick="add('*')">*</button>
+    <button onclick="add('/')">/</button><br><br>
+
+    <button onclick="res()">=</button>
+    <button onclick="backspace()">Back</button>
+
+ <script>
+    let text = '';
+    const add = (i) => {
+        text += i;
+        document.getElementById("one").value = text;
+
+    };
+    const res = () => {
+        document.getElementById("one").value = eval(text);
+        // text = '';
+    };
+    const Clear = () => {
+        text = '';
+        document.getElementById("one").value = text;
+    };
+    const backspace = () => {
+        text = text.slice(0, -1);
+        document.getElementById("one").value = text;
+    };
+</script>
+</body>
+</html>
